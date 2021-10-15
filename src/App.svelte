@@ -30,9 +30,11 @@
 <main>
   <h1 id="title">Password Generator</h1>
 
-  <h2 id="password" on:click={copyToClipboard} title="Copy to Clipboard">
-    {password}
-  </h2>
+  <div on:click={copyToClipboard} id="password">
+    <h2 title="Copy to Clipboard">
+      {password}
+    </h2>
+  </div>
 
   <div id="generator">
     <div id="boxes">
@@ -94,11 +96,18 @@
 
   #title {
     text-align: center;
+    font-size: 26pt;
   }
 
   #password {
     text-align: center;
     cursor: pointer;
+
+    @media screen and (max-width: $small) {
+      h2 {
+        font-size: 8pt;
+      }
+    }
 
     &:hover {
       color: $primary;
@@ -127,7 +136,7 @@
     }
 
     button.btn-regenerate {
-      width: 50%;
+      width: 70%;
       border: 1px transparent;
       background: $primary;
       padding: 14px;
