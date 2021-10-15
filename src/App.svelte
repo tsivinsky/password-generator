@@ -145,6 +145,10 @@
       &:active {
         box-shadow: 0 3px 1px 1px rgba($color: #000, $alpha: 0.25);
       }
+
+      @media screen and (min-width: $medium) {
+        width: 30%;
+      }
     }
   }
 </style>
